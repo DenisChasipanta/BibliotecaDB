@@ -1,6 +1,5 @@
 package com.istqmet.BibliotecaDB.entidad;
 
-import com.istqmet.BibliotecaDB.entidad.Autor1;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,7 +16,11 @@ public class Libro {
     private LocalDate publicacion;
 
     @ManyToOne
-    @JoinColumn(name = "autor1_id")
-    private Autor1 autor1;
+    @JoinColumn(name = "autor_id")
+    private Autor autor;
+
+    @OneToOne
+    @JoinColumn(name = "editor_id")
+    private Editor editor;
 
 }
